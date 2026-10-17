@@ -18,7 +18,7 @@ window.HIREX_CONFIG = {
 
   // Links do rodapé
   LINKS: {
-    politica: "#",
+    politica: "https://hire-international.com/pt/politica-de-privacidade/",
     instagram: "#",
     linkedin: "#",
   },
