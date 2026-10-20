@@ -39,7 +39,7 @@ main { flex: 1; }
 [hidden] { display: none !important; }
 
 h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; color: var(--roxo-950); }
-h1 { font-size: clamp(1.75rem, 3.3vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.18; margin-bottom: .6em; }
+h1 { font-size: clamp(1.5rem, 2.6vw, 2.35rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: .6em; text-wrap: balance; }
 h1 .destaque { color: var(--roxo-600); }
 h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.01em; }
 h3 { font-size: 1.15rem; font-weight: 600; }
@@ -153,26 +153,114 @@ a { color: var(--roxo-600); }
     font-size: .9rem;
   }
 }
-/* A imagem tem o mesmo fundo lilás da página, então ela se funde ao fundo. */
-.hero__imagem img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; }
+/* ===== iPad com o perfil do LinkedIn (feito em código: sempre nítido) ===== */
+.hero__imagem { container-type: inline-size; width: 100%; margin: 0 auto; }
+.ipad {
+  /* 1em = 2% da largura do iPad: tudo abaixo escala junto. */
+  font-size: calc(100cqw / 56);
+  position: relative;
+  width: 56em;
+  padding: 1.6em;
+  background: #0f0e13;
+  border-radius: 3.4em;
+  box-shadow: 0 2.5em 4.5em rgba(59, 26, 140, 0.28), inset 0 0 0 .12em #3a3842;
+  transform: rotate(3deg);
+  color: #191919;
+  font-family: "Poppins", system-ui, sans-serif;
+  line-height: 1.35;
+}
+.ipad__tela { position: relative; height: 72em; background: #f3f2ef; border-radius: 2em; overflow: hidden; }
+.ipad__tela * { margin: 0; }
 
+.li-nav { display: flex; align-items: center; gap: 1.1em; height: 4.6em; padding: 0 1.4em; background: #fff; border-bottom: .1em solid #e0dfdc; }
+.li-logo { display: grid; place-items: center; width: 2.6em; height: 2.6em; border-radius: .4em; background: #0a66c2; color: #fff; font-weight: 700; font-size: 1.5em; line-height: 1; padding-bottom: .1em; box-sizing: border-box; flex: none; }
+.li-busca { flex: none; width: 11em; height: 2.4em; display: flex; align-items: center; padding: 0 1em; border-radius: .4em; background: #edf3f8; color: #666; font-size: .95em; }
+.li-nav__itens { margin-left: auto; display: flex; align-items: center; gap: 1.5em; font-size: .72em; color: #666; }
+.li-nav__itens b { font-weight: 500; white-space: nowrap; }
+.li-eu { width: 2.4em; height: 2.4em; border-radius: 50%; background: linear-gradient(135deg, #7C4DFF, #3B1A8C); }
+
+.li-corpo { display: grid; grid-template-columns: 1fr 15em; gap: 1.1em; padding: 1.2em 1.3em; }
+.li-card { background: #fff; border: .1em solid #e0dfdc; border-radius: .8em; padding: 1.1em 1.3em; margin-bottom: .8em; }
+.li-card h5 { font-size: 1.25em; font-weight: 600; margin-bottom: .45em; }
+.li-card p { font-size: .95em; }
+
+.li-perfil { padding: 0; overflow: hidden; }
+.li-banner { height: 6.4em; background: linear-gradient(180deg, #e3eaf2, #c4d2e1); }
+.li-banner svg { display: block; width: 100%; height: 100%; fill: #9db2c9; opacity: .8; }
+.li-avatar { display: block; position: relative; margin: -4.2em 0 0 1.5em; width: 9em; height: 9em; border-radius: 50%; border: .35em solid #fff; box-sizing: border-box; object-fit: cover; background: #d9cbe9; }
+.li-info { padding: .5em 1.5em 1.1em; }
+.li-info h4 { font-size: 1.9em; font-weight: 700; line-height: 1.15; }
+.li-titulo { font-size: 1.05em !important; margin-top: .25em !important; line-height: 1.35; }
+.li-local { font-size: .85em !important; color: #666; margin-top: .5em !important; }
+.li-local u { color: #0a66c2; text-decoration: none; font-weight: 600; }
+.li-conexoes { font-size: .85em !important; color: #0a66c2; font-weight: 600; margin-top: .1em !important; }
+.li-botoes { display: flex; gap: .6em; margin-top: .7em; }
+.li-btn { display: inline-block; padding: .45em 1.2em; border-radius: 2em; border: .12em solid #0a66c2; color: #0a66c2; font-weight: 600; font-size: .9em; }
+.li-btn--azul { background: #0a66c2; color: #fff; }
+.li-btn--cinza { border-color: #666; color: #666; }
+.li-btn--p { margin-top: .4em; padding: .2em .9em; font-size: .75em; border-color: #666; color: #444; }
+
+.li-card > p { color: #333; font-size: .9em; }
+.sub-vermelho { text-decoration: underline; text-decoration-color: #d93848; text-decoration-thickness: .14em; text-underline-offset: .22em; }
+
+.li-exp { display: flex; gap: .9em; margin-top: .9em; }
+.li-exp strong { display: block; font-size: 1.02em; font-weight: 600; }
+.li-exp em { display: block; font-style: normal; font-size: .88em; }
+.li-exp small { display: block; font-size: .78em; color: #666; }
+.li-exp ul { margin: .4em 0 0; padding-left: 1.1em; font-size: .85em; color: #333; }
+.li-exp li { margin-bottom: .1em; }
+.li-exp--edu { margin-top: .3em; }
+.circ { display: inline-block; padding: 0 .35em; margin: 0 -.1em; border: .13em solid #d93848; border-radius: 50%; line-height: 1.2; }
+
+.li-emp { flex: none; display: inline-block; width: 3.4em; height: 3.4em; border-radius: .3em; background: #e8eaee; }
+.li-emp--a { background: linear-gradient(135deg, #1b4f9c 0 50%, #2f7ae5 50%); }
+.li-emp--b { background: linear-gradient(135deg, #0a66c2, #6db7ff); border-radius: 50%; }
+.li-emp--c { background: radial-gradient(circle, #fff 0 22%, #2d5aa0 23% 55%, #e8eaee 56%); border-radius: 50%; }
+
+.li-card--mini { padding: .9em 1em; }
+.li-card--mini p { display: flex; align-items: center; gap: .6em; font-size: .78em; font-weight: 600; margin: .35em 0 !important; }
+.li-card--mini .li-emp { width: 2.2em; height: 2.2em; }
+.li-side .li-card { padding: 1em 1em; }
+.li-side h5 { font-size: 1.05em; }
+.li-pessoa { display: flex; gap: .7em; margin-top: .9em; }
+.li-pessoa strong { display: block; font-size: .85em; font-weight: 600; line-height: 1.2; }
+.li-pessoa small { display: block; font-size: .72em; color: #666; line-height: 1.25; }
+.av { flex: none; display: grid; place-items: center; width: 3.2em; height: 3.2em; border-radius: 50%; font-style: normal; font-size: .85em; font-weight: 600; color: #fff; }
+.av1 { background: linear-gradient(135deg, #e58a6a, #b24a5a); }
+.av2 { background: linear-gradient(135deg, #5b7b9c, #2d3e55); }
+.li-skills { display: flex; flex-wrap: wrap; gap: .5em; margin-top: .6em; }
+.li-skills span { padding: .3em .85em; border: .12em solid #999; border-radius: 2em; font-size: .78em; font-weight: 500; color: #333; }
+.li-lang { font-size: .8em !important; line-height: 1.6; }
+
+/* ----- anotações em vermelho, "à mão" ----- */
+.anot { position: absolute; z-index: 3; display: flex; align-items: flex-start; gap: .15em; color: #d93848; font-family: "Caveat", "Segoe Print", cursive; font-weight: 600; font-size: 1em; line-height: 1; pointer-events: none; transform: rotate(-3deg); white-space: nowrap; }
+.anot span { font-size: 1.55em; line-height: 1; }
+.anot .seta { width: 2.4em; height: auto; flex: none; fill: none; stroke: #d93848; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.anot--esq { flex-direction: row-reverse; }
+.anot--esq .seta { transform: scaleX(-1); }
+.anot--cima .seta { transform: scaleX(-1) scaleY(-1); }
+.n-foto { left: 14em; top: 6.4em; }
+.n-valor { left: 19.5em; top: 15em; }
+.n-resultados { left: 21.5em; top: 23.6em; }
+.n-sobre { left: 23.2em; top: 33.4em; }
+.n-skills { left: 40em; top: 26.6em; }
+.n-ingles { left: 40em; top: 46.4em; }
+.n-quantifique { left: 40em; top: 51em; }
+.n-destaque { left: 40em; top: 57.2em; }
+.n-otimo { left: 40em; top: 64.2em; }
+.li-sobre { max-width: 19em; }
+
+/* ----- posição do iPad na página ----- */
 @media (max-width: 899px) {
-  .tela--hero { padding-top: 24px; }
-  .hero { gap: 0; }
+  .tela--hero { padding: 24px 0 48px; overflow-x: clip; }
+  .hero { gap: 28px; }
   .hero__texto .botao { width: 100%; }
-  /* A imagem tem uma faixa lilás em cima e embaixo: corta para o iPad aparecer logo. */
-  .hero__imagem { overflow: hidden; margin-top: 8px; }
-  .hero__imagem img { margin: -14% auto -10%; }
+  .hero__imagem { max-width: 440px; width: 92%; padding: 1.2em 0; }
 }
 @media (min-width: 900px) {
-  .tela--hero {
-    min-height: calc(100vh - 72px);
-    display: flex;
-    align-items: center;
-  }
-  .hero { grid-template-columns: 1.05fr 1fr; gap: 56px; }
-  .tela--hero { padding: 24px 0 56px; }
-  .hero__imagem img { max-height: calc(100vh - 72px - 80px); width: auto; max-width: 100%; margin: 0 0 0 auto; }
+  .tela--hero { min-height: calc(100vh - 72px); display: flex; align-items: center; padding: 24px 0 56px; overflow-x: clip; }
+  .hero { grid-template-columns: 1.2fr 1fr; gap: 48px; }
+  .hero__imagem { width: min(100%, 540px, calc((100vh - 170px) * .76)); margin: 0 0 0 auto; }
 }
 
 /* ===== Formulários ===== */
