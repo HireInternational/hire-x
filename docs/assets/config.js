@@ -2,24 +2,21 @@
 //  CONFIGURAÇÕES DO HIRE-X — edite só este arquivo
 // ============================================================
 window.HIREX_CONFIG = {
-  // true = modo demonstração (não chama a IA, mostra um resultado de exemplo).
-  // Mude para false depois que o Worker da Cloudflare estiver publicado.
-  MODO_DEMO: true,
+  // false = site funcionando de verdade
+  MODO_DEMO: false,
 
-  // Endereço do Worker da Cloudflare (ex.: "https://hire-x-api.SEU-USUARIO.workers.dev")
-  API_URL: "",
+  // Endereço do Worker da Cloudflare
+  API_URL: "COLE_AQUI_O_ENDERECO_DO_WORKER",
 
-  // Chave PÚBLICA do Turnstile (anti-robô). Esta pode ficar aqui, não é segredo.
-  // A chave abaixo é a de teste da Cloudflare (sempre aprova).
-  TURNSTILE_SITE_KEY: "1x00000000000000000000AA",
+  // Chave PÚBLICA do Turnstile (Site Key)
+  TURNSTILE_SITE_KEY: "0x4AAAAAAFbhH4XPfGtW6jXZ",
 
-  // WhatsApp da consultora: só números, com 55 + DDD. Ex.: "5511999999999"
-  WHATSAPP_NUMERO: "",
+  // Link pronto do WhatsApp, com a mensagem já embutida
+  WHATSAPP_LINK: "https://wa.me/message/SGRIH33QHAQQH1",
 
   // Links do rodapé
   LINKS: {
     politica: "https://hire-international.com/pt/politica-de-privacidade/",
-    instagram: "#",
-    linkedin: "#",
+    instagram: "https://www.instagram.com/hireinternational",
   },
 };
