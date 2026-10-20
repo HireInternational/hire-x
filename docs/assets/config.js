@@ -6,8 +6,8 @@ window.HIREX_CONFIG = {
   MODO_DEMO: false,
 
   // Endereço do Worker da Cloudflare
-  API_URL: "hire-x-api.hireinternational.workers.dev",
-
+  API_URL: "https://hire-x-api.hireinternational.workers.dev"
+    
   // Chave PÚBLICA do Turnstile (Site Key)
   TURNSTILE_SITE_KEY: "0x4AAAAAAFbhH4XPfGtW6jXZ",
 
