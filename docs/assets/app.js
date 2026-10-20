@@ -32,6 +32,8 @@
 
   // ---------- WhatsApp ----------
   function linkWhatsApp(texto) {
+    // Se existir um link pronto no config.js, usa exatamente ele (com a mensagem já embutida).
+    if (CFG.WHATSAPP_LINK) return CFG.WHATSAPP_LINK;
     const numero = (CFG.WHATSAPP_NUMERO || "").replace(/\D/g, "");
     const base = numero ? `https://wa.me/${numero}` : "https://wa.me/";
     return `${base}?text=${encodeURIComponent(texto)}`;
