@@ -18,5 +18,8 @@ window.HIREX_CONFIG = {
   LINKS: {
     politica: "https://hire-international.com/pt/politica-de-privacidade/",
     instagram: "https://www.instagram.com/hirebrazil",
+    
+// GTM 
+    GTM_ID: "GTM-TFSZHH68",
   },
 };
